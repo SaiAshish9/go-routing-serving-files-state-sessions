@@ -72,6 +72,9 @@ func bar(w http.ResponseWriter, req *http.Request) {
 		return
 	}
 	un, ok := dbSessions[c.Value]
+
+	// ok -> bool
+
 	if !ok {
 		http.Redirect(w, req, "/", http.StatusSeeOther)
 		return
@@ -79,7 +82,3 @@ func bar(w http.ResponseWriter, req *http.Request) {
 	u := dbUsers[un]
 	tpl.ExecuteTemplate(w, "bar.gohtml", u)
 }
-
-// map examples with the comma, ok idiom
-// https://play.golang.org/p/OKGL6phY_x
-// https://play.golang.org/p/yORyGUZviV

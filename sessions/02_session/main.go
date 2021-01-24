@@ -48,6 +48,7 @@ func index(w http.ResponseWriter, req *http.Request) {
 	}
 
 	// uuid -> universal unique ID
+	// godoc.org
 
 	// process form submission
 	if req.Method == http.MethodPost {
